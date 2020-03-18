@@ -1,5 +1,5 @@
-const {generateRandomArray, isSorted, swap} = require('./helper')
-function selectionSort(arr, n) {
+const {generateRandomArray, isSorted, swap} = require ('./helper');
+function selectionSort (arr, n) {
   for (let i = 0; i < n; i++) {
     // 寻找[i, n)区间的最小值
     let minIndex = i;
@@ -14,7 +14,7 @@ function selectionSort(arr, n) {
 }
 
 const n = 1000;
-const testArray = generateRandomArray(n, 0, n)
-const res = selectionSort(testArray, n)
-const hasSorted = isSorted(res, n)
-console.log(hasSorted)
+const testArray = generateRandomArray(n, 0, n);
+const res = selectionSort(testArray, n);
+const hasSorted = isSorted(res, n);
+console.log (hasSorted);
