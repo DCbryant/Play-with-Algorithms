@@ -1,4 +1,5 @@
 const {swap, generateRandomArray, isSorted} = require('./helper')
+// 因为for循环会打断，所以对于近乎有序的数组，插入排序的性能非常好，某种情况能达到O(n)
 const insertSort = (arr, n) => {
   // 第一个元素不用考虑，已经有序了
   for (let i = 1; i < n; i++) {
