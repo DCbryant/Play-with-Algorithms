@@ -4,9 +4,13 @@ const insertSort = (arr, n) => {
   for (let i = 1; i < n; i++) {
     // 寻找元素arr[i]合适的插入位置
     // 如果当前元素比前一个元素小就交换两者位置
-    for (let j = i; j > 0 && arr[j] < arr[j - 1]; j--) {
-      swap(arr, j, j - 1)
+    const e = arr[i] //保存元素e应该插入的位置
+    let j;
+    for (j = i; j > 0 && arr[j - 1] > e; j--) {
+      arr[j] = arr[j - 1]
     }
+    // 减少赋值，性能更好
+    arr[j] = e
   }
   return arr
 }
