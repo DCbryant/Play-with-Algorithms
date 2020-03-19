@@ -5,9 +5,10 @@ const insertSort = (arr, n) => {
   for (let i = 1; i < n; i++) {
     // 寻找元素arr[i]合适的插入位置
     // 如果当前元素比前一个元素小就交换两者位置
-    const e = arr[i]; //保存元素e应该插入的位置
-    let j;
+    const e = arr[i]; 
+    let j; //保存元素e应该插入的位置
     for (j = i; j > 0 && arr[j - 1] > e; j--) {
+      // 将前一个位置往后挪走，小的值与大值交换
       arr[j] = arr[j - 1];
     }
     // 减少赋值，性能更好

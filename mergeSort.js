@@ -10,9 +10,10 @@ const mergeSort = (arr, n) => {
     let mid = l + (r - l) / 2;
     _mergeSort(arr, l, mid);
     _mergeSort(arr, mid + 1, r);
+    // 将两个有序子数组合并
     _merge(arr, l, mid, r);
   }
-
+  // [1,2,3,4,5]
   // 将arr[l, mid] 和 arr[mid + 1, r] 两部分进行归并
   function _merge (arr, l, mid, r) {
     const aux = [];

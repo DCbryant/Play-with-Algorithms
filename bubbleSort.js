@@ -1,22 +1,25 @@
 const {swap, generateRandomArray, isSorted} = require ('./helper');
 const insertSort = (arr, n) => {
-  let newn;
-  do {
-    newn = 0;
-    for (let i = 0; i < n; i++) {
-      if (arr[i - 1] > arr[i]) {
-        swap(arr, i - 1, i);
-        // 记录最后一次的交换位置,在此之后的元素在下一轮扫描中均不考虑
-        newn = i;
+  let isChanged = false;
+  for (let i = 0; i < n; i++) {
+    isChanged = 0;
+    for (let j = 0; j < n - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1)
+        isChanged = 1;
       }
     }
-    n = newn;
-  } while (newn > 0);
+    // 没有发生置换，说明已经排好序了，后面不用继续了
+    if (isChanged === 0) {
+      break;
+    }
+  }
   return arr;
 };
 
-const n = 1000;
+const n = 10;
 const testArray = generateRandomArray(n, 0, n);
 const res = insertSort(testArray, n);
+console.log(res);
 const hasSorted = isSorted(res, n);
 console.log (hasSorted);
